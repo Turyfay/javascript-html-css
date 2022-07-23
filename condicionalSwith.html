@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicional Switch</title>
+    <script>
+        var estadoCivil = "soltero";
+        var mensaje = "Lo invitamos a un viaje a Honduras";
+        var mensaje2 = "";
+
+        switch (estadoCivil) {
+            case "soltero":
+
+                mensaje2 = "donde podrás conocer a más personas solteras";
+                break;
+        
+            case "casado":
+                mensaje2 = 'donde podras disfrutar de la familia';
+                break;
+            case "divorciado":
+                mensaje2 = "donde podras olvidar tus penas";
+               break;
+            case "viudo":
+                mensaje2 = "donde podras recordar tus mejores tiempos";
+                break;
+            default:
+                mensaje2 = "donde podras definir tus situacion personal";
+                break;
+        }
+
+        var mensaje3 = "en una extraordinaria experiencia en la naturaleza";
+        document.write(mensaje+mensaje2+mensaje3);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
