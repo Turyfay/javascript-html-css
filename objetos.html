@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos</title>
+    <script>
+        //objeto
+        var alumno = new Object();
+        alumno.nombre = "David";
+        alumno.apellido = "Enamorado";
+        alumno.edad = 26;
+        //Asignar un array
+        alumno.califiaciones = [1,2,3,4,56,78,6];
+        //asignar objeto
+        alumno.direccion = {
+            calle:"1",
+            colonia: "Kennedy",
+            num:504
+        }
+        //Imprimir propiedades
+        document.write("Nombre del alumno: "+alumno.nombre+ " "+alumno.apellido+"<br>");
+        document.write("Primera calificacion: "+alumno.califiaciones[0]+"<br>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
