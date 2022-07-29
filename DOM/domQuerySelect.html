@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Query Selector</title>
+    <script>
+        window.onload = () =>{
+            //seleccionar por clase
+            var rojo = document.querySelectorAll(".rojo");
+            console.log("Tenemos "+rojo.length+" elementos rojos");
+
+            //seleccionar por identificador 
+            var amarillo = document.querySelectorAll("#amarillo");
+            console.log("Tenemos "+amarillo.length+" elementos amarillos");
+
+            //seleccionar por atributo
+            var verdes = document.querySelectorAll("p[class]");
+            console.log("Tenemos "+verdes.length+" elementos verdes");
+
+            //seleccionar por etiqueta
+            var parrafos = document.querySelectorAll("p");
+            console.log("Tenemos "+parrafos.length+" elementos parrafos");
+
+        }
+    </script>
+    <style>
+        h1{
+            color: blue;
+        }
+        .rojo{
+            color: red;
+        }
+        .verde{
+            color: green;
+        }
+        #amarillo{
+            color: yellow;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Esta es una pagina html</h1>
+    <p class="verde">Las siglas DOM significan:</p>
+    <p>Este es otro parrafo</p>
+    <ul id="amarillo">
+        <li class="rojo">Document</li>
+        <li>Object</li>
+        <li class="rojo noexiste">Model</li>
+    </ul>
+</body>
+</html>
