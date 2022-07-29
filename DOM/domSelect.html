@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Select</title>
+    <script>
+    window.onload = () =>{
+        var rojos = document.getElementsByClassName("rojo");
+        console.log("Elementos que contienen la clase rojo son: "+rojos.length);
+        for (let i = 0; i < rojos.length; i++) {
+            console.log("El contenido de los nodos es: "+rojos[i].innerHTML);
+            
+        }
+    }
+        
+
+
+    </script>
+    <style>
+        .rojo{
+            color:red;
+        }
+    </style>
+
+
+</head>
+<body>
+    <h1>Esta es una pagina html</h1>
+    <p>DOM</p>
+    <ul id="dom">
+        <li class="rojo">Document</li>
+        <li>Object</li>
+        <li class="rojo">Model</li>
+        <li>Modefl</li>
+    </ul>
+</body>
+
+
+
+</html>
