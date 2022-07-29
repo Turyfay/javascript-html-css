@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+
+
+
+</head>
+<body>
+    <h1>Esta es una pagina html</h1>
+    <p>DOM</p>
+    <ul id="dom">
+        <li>Document</li>
+        <li>Object</li>
+        <li>Model</li>
+        <li>Modefl</li>
+    </ul>
+</body>
+
+<script>
+    
+        var misli = document.getElementsByTagName("li");
+        document.write("El numero de elementos de la lista son: "+misli.length+"<br>");
+
+        //Recuperar un elemento por su identificador
+        var miDOM = document.getElementById("dom");
+        document.write("El numero de nodos de la lista es: "+miDOM.childNodes.length+"<br>");
+
+        //Contenido de un nodo
+        document.write("El contenido del nodo es: "+miDOM.innerHTML+"<br>");
+
+        //type nodes
+        document.write("El tipo de nodo es: "+miDOM.nodeType+"<br>");
+
+    
+
+
+</script>
+
+</html>
