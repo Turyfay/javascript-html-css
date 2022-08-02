@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM set atribute</title>
+    <script>
+        window.onload = ()=>{
+            // recuperar los li
+            var misLI = document.getElementsByTagName("li");
+            console.log("El numero de elementos de tipo lista es de: "+misLI.length);
+            var miDOM = document.getElementById("dom");
+            console.log("El tipo de nodo de DOM es: "+miDOM.nodeType);
+            //cambiar el atribute de dom
+            miDOM.setAttribute("class","rojo");
+        }
+    </script>
+    <style>
+        .rojo{
+            color: red;
+            font-size: 3em;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Esta es una pagina HTML</h1>
+    <p>Las siglas DOM significan: </p>
+    <ul id="dom">
+        <li>Document</li>
+        <li>Object</li>
+        <li>Model</li>
+    </ul>
+    
+
+
+
+</body>
+</html>
