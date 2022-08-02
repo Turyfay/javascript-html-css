@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM prev next</title>
+    <script>
+        window.onload = ()=>{
+            var medio = document.getElementById("medio");
+            do {
+                console.log(medio.nodeName,medio.innerHTML);
+                medio = medio.nextElementSibling;
+            } while (medio);
+        }
+    </script>
+</head>
+<body>
+    <h1>Esta es una apgina HTML</h1>
+    <p>Las siglas DOM significan</p>
+    <ul>
+        <li>Document</li>
+        <li id="medio">Object</li>
+        <li>Model</li>
+    </ul>
+</body>
+</html>
