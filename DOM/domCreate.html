@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Create node</title>
+    <script>
+        window.onload = ()=>{
+            //create array
+            var textos = new Array();
+            textos.push("JavaScript");
+            textos.push("C#");
+            textos.push("DART");
+            textos.push("TypeScript");
+            textos.push("Python");
+            //create number random
+            var num = Math.floor(Math.random()*textos.length);
+
+            //create node
+            var titulo = document.createElement("h1");
+            var texto = document.createElement("p");
+
+            //
+            titulo.innerHTML = "El lenguaje es:";
+            texto.innerHTML = textos[num];
+
+            // add DOM
+            document.getElementById("sabias").appendChild(titulo);
+            document.getElementById("sabias").appendChild(texto);
+
+        }
+    </script>
+</head>
+<body>
+   <div id="sabias">
+
+   </div>
+</body>
+</html>
