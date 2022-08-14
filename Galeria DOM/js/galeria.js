@@ -12,12 +12,14 @@ window.onload = ()=>{
             fondoNegro.style.top = 0;
             fondoNegro.style.backgroundColor = "rgba(0,0,0,0.5)";
             fondoNegro.style.cursor = "pointer";
+            fondoNegro.style.zIndex = 1;
 
             //dimensiones 
             fondoNegro.style.width = window.innerWidth + "px";
             fondoNegro.style.height = window.innerHeight + "px";
             fondoNegro.style.top = window.scrollY +"px";
             fondoNegro.style.left = window.scrollX +"px";
+
 
             //Crear imagen
 
@@ -30,13 +32,29 @@ window.onload = ()=>{
             imagen.src = imagenGrande;
             imagen.style.display = "block";
             imagen.style.position = "absolute";
+            imagen.style.zIndex = 2;
 
-            imagen.addEventListener("load",()=>{
+            imagen.addEventListener("load",function(){
+                 centrar(this);
                 fondoNegro.appendChild(imagen);
+            },false);
+
+            imagen.addEventListener("click",(e)=>{
+                if(fondoNegro){
+                   fondoNegro.parentNode.removeChild(fondoNegro); 
+                }
             },false);
 
         }else{
             console.log("Lo sentimos, no seleccionastes una imagen");
         }
     },false);
+}
+
+const centrar = (imagen) => {
+    const x = (window.innerWidth - imagen.width) / 2;
+    const y = (window.innerHeight - imagen.height) / 2;
+    imagen.style.top = y + "px";
+    imagen.style.left = x + "px";
+    return imagen;
 }
