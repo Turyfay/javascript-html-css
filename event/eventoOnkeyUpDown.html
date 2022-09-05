@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos | onKeyUp onKeyDown</title>
+
+    <script>
+        var caja;
+
+        window.onload =function(){
+            caja = document.getElementById("caja");
+            //detectar el evento onKeyUp
+            caja.onkeyup = function(){
+                var valor = caja.value
+                caja.value = valor.toUpperCase();
+                var salida = "";
+                for (var i = 0; i < valor.length; i++) {
+                    salida += valor[i];
+                }
+                //salida = salida.reverse()
+                console.log(salida);
+                document.getElementById("salida").innerHTML = salida ;
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="caja" id="caja">
+    <p id="salida"></p>
+</body>
+</html>
