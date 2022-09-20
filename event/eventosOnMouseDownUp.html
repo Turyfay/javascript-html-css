@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event | Mouse Down Up    </title>
+    <script>
+        var wow,miBody;
+        window.onload = function(){
+            wow = document.getElementById("wow");
+            miBody = document.getElementsByTagName("body");
+            wow.onmousedown = function(){
+                miBody[0].setAttribute("class","naranja");
+
+            }
+            wow.onmouseup = function(){
+                miBody[0].setAttribute("class","blanco");
+
+            }
+        }
+    </script>
+    <style>
+        .naranja{
+            background-color: orange;
+        }
+        .blanco{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <img src="img/img2.jpg" id="wow">
+</body>
+</html>
