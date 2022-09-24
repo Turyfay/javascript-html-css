@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el numero magico</title>
+    <script>
+        //creacion de numero aleatorio
+        var numero = Math.floor(Math.random() * 100) + 1;
+        console.log(numero);
+        var intentos = 1;
+        window.onload = function () {
+            document.getElementById("envia").onclick = function () {
+                var miNumero = document.getElementById("numero").value;
+                if (numero > miNumero) {
+                    document.getElementById("salida").innerHTML += intentos + ") El número " + miNumero +
+                        " es menor al numero buscado <br>";
+                } else if (numero < miNumero) {
+                    document.getElementById("salida").innerHTML += intentos + ") El numero " + miNumero +
+                        " es mayor al numero buscado <br>";
+                } else {
+                    document.getElementById("salida").innerHTML += intentos + ") El numero magico es " + numero
+                        + " felicidades <br>";
+                    document.getElementById("envia").setAttribute("disabled", "disabled");
+                    return;
+                }
+                intentos++;
+                if (intentos > 6) {
+                    document.getElementById("salida").innerHTML += "Los sentimos, pero eres muy malo"
+                        + " para adivinar. El numero magico era: " + numero;
+                    document.getElementById("envia").setAttribute("disabled", "disabled");
+                }
+                document.getElementById("numero").value = "";
+            }
+        }
+    </script>
+    <style>
+        .container{
+            
+            display: flex;
+            justify-content: center;
+            
+        }
+        .card{
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: gainsboro;
+        }
+        #salida{
+            color: red;
+            margin-top: 10px;
+        }
+        #numero{
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 5px;
+        }
+        #envia{
+            padding-top:  2.5px;
+            padding-bottom: 2.5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <p>Encontrar el numero magico entre 1 y el 100</p>
+            <p>Tienes 6 oportunidades</p>
+            <input type="text" name="numero" id="numero">
+            <button type="submit" id="envia">Envia    </button>
+            <br>
+            <div id="salida"></div>
+        </div>
+       
+    </div>
+    
+</body>
+
+</html>
