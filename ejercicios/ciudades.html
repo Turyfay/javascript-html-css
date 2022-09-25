@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relacion dos combo-box</title>
+    <script>
+        const paises_array = new Array("Seleccione un pais","México","España","Colombia");
+        const ciudad0_array =  new  Array("Selecciona una ciudad");
+
+        const ciudad1_array = new Array("Selecciona una ciudad","CDMX","Guadalajara","Monterrey");
+        const ciudad2_array = new Array("Selecciona una ciudad","Madrid","Valencia","Barcelona");
+        const ciudad3_array = new Array("Selecciona una ciudad","Bogotá","Barranquilla","Cali");
+
+        //Arreglos de arreglos
+        const ciudad_array =  new Array(ciudad0_array,ciudad1_array,ciudad2_array,ciudad3_array);
+        //Apuntadores para los combobox
+        var pais_cb, ciudad_cb;
+
+
+        window.onload = function(){
+            //Referencia a los combobox
+            pais_cb = document.getElementById("pais");
+
+            //Limpiamos el combo del país
+            while(pais_cb.length > 0) pais_cb.remove(0);
+
+            //Poblar el combobox
+            paises_array.map((pais,i)=>{
+                crearOption(pais_cb,i,pais);
+            });
+
+            //Detector de eventos
+            pais_cb.onchange = function(e){
+                //Referencia 
+                ciudad_cb = document.getElementById("ciudad");
+                //Limpiar el combo de ciudad
+                while(ciudad_cb.length > 0) ciudad_cb.remove(0);
+                
+                const miPais = pais_cb.selectedIndex;
+
+                //Poblar el combo de ciudad 
+                ciudad_array[miPais].map((ciudad,i)=>{
+                    crearOption(ciudad_cb,i,ciudad);
+                });
+            }
+
+        }
+
+        const crearOption = (combo,index,valor)=>{
+            const miOpcion = new Option(valor,String(index));
+            combo.appendChild(miOpcion);
+        }
+
+    </script>
+</head>
+<body>
+    <select name="pais" id="pais">
+        <option value="">--Selecciona un país--</option>
+    </select>
+    <select name="ciudad" id="ciudad">
+        <option value="">--Selecciona una ciudad--</option>
+    </select>
+</body>
+</html>
